@@ -1,0 +1,88 @@
+.header-wpr {
+    background: #eee;
+    height: 50px;
+    .hdr-brand-col {
+        .ld-logo {
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 50px;
+        }
+        .header-srch {
+            padding: 4px 10px;
+            width: 50%;
+            position: relative;
+            bottom: 7px;
+            left: 35px;
+        }
+    }
+    .hdr-account-col {
+        //line-height: 50px;
+        .hdr-notification {
+            position: relative;
+            top: -5px;
+            right: 10px;
+        }
+        .hdr-user-name {
+            position: relative;
+            top: -10px;
+            margin-right: 15px;
+        }
+        img.circle-border {
+            height: 42px;
+            width: 42px;
+            border: 2px solid #FFFFFF;
+            border-radius: 50%;
+            position: relative;
+            top: 4px;
+        }
+        .hdr-down-arrow {
+            position: relative;
+            top: -4px;
+        }
+    }
+}
+
+//.hdr-wpr{
+//    position: relative;
+//    z-index: 99;
+//    height: 50px;
+//    background: #0099cc;
+//    .hdr-inner{
+//        position: relative;
+//        margin: 0 auto;
+//        padding: 0px 15px;
+//        max-width: 1360px;
+//        .hdr-brand{
+//            line-height: 50px;
+//            .ld-logo{
+//                font-size: 32px;
+//                font-weight: 700;
+//            }
+//        }
+//        .hdr-search{
+//            margin-top: 13px;
+//            .hdr-srch{
+//                width: 100%;
+//            }
+//        }
+//        .hdr-account{
+//            ul{
+//                float: right;
+//                margin: 15px 22px 0 0;
+//                padding: 0px;
+//                width: 252px;
+//                height: 34px;
+//                li{
+//                    float: left;
+//                    img.circle-border {
+//                        height: 42px;
+//                        width: 42px;
+//                        border: 2px solid #FFFFFF;
+//                        border-radius: 50%;
+//                    }
+//                    
+//                }
+//            }
+//        }
+//    }
+//}
