@@ -10,6 +10,10 @@
         &.done{
             background: $positive-color;
             color: #eee;
+            i{
+                font-size: 34px;
+                line-height: 50px;
+            }
         }
         &.current{
             border: 3px solid $warn-color;

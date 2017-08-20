@@ -35,7 +35,10 @@
                             ng-class="classForSurveyTypes"
                             ng-repeat="item in surveyTypes track by $index"
                             >
-                            <div ng-class="['item-wpr', item.status]">{{$index}}</div>
+                            <div ng-class="['item-wpr', item.status]">
+                                <span ng-if="item.status != 'done'">{{$index}}</span>
+                                <i ng-if="item.status == 'done'" class="material-icons">done</i>
+                            </div>
                             <div>{{item.name}}</div>
                         </div>
                     </div>
