@@ -19,5 +19,16 @@ revelo
 			templateUrl: 'app/components/home/home.html',
 			controller: 'HomeCtrl'
     	})
-
+    $stateProvider
+        .state('itemSelect', {
+            url: '/itemSelect',
+            templateUrl: 'app/components/itemSelect/itemSelect.html',
+            controller: 'ItemSelectCtrl'
+        })
+    $stateProvider
+        .state('survey', {
+            url: '/survey',
+            templateUrl: 'app/components/survey/survey.html',
+            controller: 'surveyCtrl'
+        })
 });

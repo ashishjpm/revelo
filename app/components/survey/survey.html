@@ -14,7 +14,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h2 class="title">Revelo</h2>
+                            <h2 class="title">Survey</h2>
                             <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. </h5>
                         </div>
                     </div>
@@ -25,23 +25,21 @@
                 <div class="section text-center section-landing">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h2 class="title">You are looking for</h2>
+                            <h2 class="title">Survey</h2>
                             <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. </h5>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="item in [1,2,3,4,5,6,7,8]">
-                            <div class="cust-card">
-                                <img src="assets/images/travel-card.jpeg" alt="">
-                                <div class="card-content">
-                                    Some text about the card
-                                    <div ui-sref="itemSelect" class="cta">
-                                        <i class="material-icons">play_arrow</i>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row survey-type-wpr">
+                        <div 
+                            ng-show="(surveyTypes) && (surveyTypes.length < 5)" 
+                            ng-class="classForSurveyTypes"
+                            ng-repeat="item in surveyTypes track by $index"
+                            >
+                            <div ng-class="['item-wpr', item.status]">{{$index}}</div>
+                            <div>{{item.name}}</div>
                         </div>
                     </div>
+                    <div class="row">This is going to be QUIZ Section</div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,25 @@
+.survey-type-wpr{
+    margin: 30px auto;
+    .item-wpr{
+        height: 50px;
+        width: 50px;
+        margin: auto;
+        line-height: 50px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        &.done{
+            background: $positive-color;
+            color: #eee;
+        }
+        &.current{
+            border: 3px solid $warn-color;
+            background: $white-color;
+            color: $font-black;
+        }
+        &.inactive{
+            border: 3px solid #ababab;
+            background: $white-color;
+            color: $font-black;
+        }
+    }
+}
