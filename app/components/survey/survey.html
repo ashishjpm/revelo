@@ -42,7 +42,25 @@
                             <div>{{item.name}}</div>
                         </div>
                     </div>
-                    <div class="row">This is going to be QUIZ Section</div>
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12 col-xs-12">This is going to be QUIZ Section</div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-12" ng-repeat="item in [1,2,3]">
+                                    <div class="result-card">
+                                        <div class="result-card-title clearfix">
+                                            <div class="result-card-text">Recommended Item: {{item}}</div>
+                                            <div class="result-card-menu"></div>
+                                        </div>
+                                        <div class="result-card-action">
+                                            <button class="btn btn-simple">Action 1</button>
+                                            <button class="btn btn-simple">Action 2</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
