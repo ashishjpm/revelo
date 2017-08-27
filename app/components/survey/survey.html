@@ -43,7 +43,30 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-8 col-sm-12 col-xs-12">This is going to be QUIZ Section</div>
+                        <div class="col-md-8 col-sm-12 col-xs-12 survey-wpr">
+                            <div ng-if="surveyDetails[currentQue].type == 'single_string_choice'">
+                                <div class="question">{{surveyDetails[currentQue].question}}</div>
+                                <div class="radio option-list" ng-repeat="item in surveyDetails[currentQue].internalObject.options">
+                                    <label>
+                                        <input type="radio" name="optionsRadios">
+                                        {{item.label}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <button 
+                                    ng-show="currentQue != 0"
+                                    class="btn btn-primary" 
+                                    ng-click="updateCurrentQue(currentQue - 1)">Previous</button>
+                                <button 
+                                    class="btn btn-success" 
+                                    ng-show="currentQue == surveyDetails.length - 1">See Result</button>
+                                <button 
+                                    ng-show="currentQue < surveyDetails.length - 1"
+                                    class="btn btn-primary" 
+                                    ng-click="updateCurrentQue(currentQue + 1)">Next</button>
+                            </div>
+                        </div>
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="row">
                                 <div class="col-md-12" ng-repeat="item in [1,2,3]">
