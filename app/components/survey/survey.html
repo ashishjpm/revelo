@@ -23,61 +23,67 @@
         <div class="main main-raised">
             <div class="container">
                 <div class="section text-center section-landing">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h2 class="title">Survey</h2>
-                            <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. </h5>
-                        </div>
-                    </div>
-                    <div class="row survey-type-wpr">
-                        <div 
-                            ng-show="(surveyTypes) && (surveyTypes.length < 5)" 
-                            ng-class="classForSurveyTypes"
-                            ng-repeat="item in surveyTypes track by $index"
-                            >
-                            <div ng-class="['item-wpr', item.status]">
-                                <span ng-if="item.status != 'done'">{{$index}}</span>
-                                <i ng-if="item.status == 'done'" class="material-icons">done</i>
+                    <div class="col-md-offset-1 col-md-10">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h2 class="title">Survey</h2>
+                                <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. </h5>
                             </div>
-                            <div>{{item.name}}</div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 col-sm-12 col-xs-12 survey-wpr">
-                            <div ng-if="surveyDetails[currentQue].type == 'single_string_choice'">
-                                <div class="question">{{surveyDetails[currentQue].question}}</div>
-                                <div class="radio option-list" ng-repeat="item in surveyDetails[currentQue].internalObject.options">
-                                    <label>
-                                        <input type="radio" name="optionsRadios">
-                                        {{item.label}}
-                                    </label>
+                        <div class="row survey-type-wpr">
+                            <div 
+                                ng-show="(surveyTypes) && (surveyTypes.length < 5)" 
+                                ng-class="classForSurveyTypes"
+                                ng-repeat="item in surveyTypes track by $index"
+                                >
+                                <div ng-class="['item-wpr', item.status]">
+                                    <span ng-if="item.status != 'done'">{{$index}}</span>
+                                    <i ng-if="item.status == 'done'" class="material-icons">done</i>
+                                </div>
+                                <div>{{item.name}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-1 col-md-10 col-sm-12 col-xs-12 survey-wpr">
+                                <div ng-if="surveyDetails[currentQue].type == 'single_string_choice'">
+                                    <div class="question">{{surveyDetails[currentQue].question}}</div>
+                                    <div class="row">
+                                        <div 
+                                            class="radio option-list col-md-offset-1 col-md-5" 
+                                            ng-repeat="item in surveyDetails[currentQue].internalObject.options">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios">
+                                                    {{item.label}}
+                                                </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <button 
+                                        ng-show="currentQue != 0"
+                                        class="btn btn-primary" 
+                                        ng-click="updateCurrentQue(currentQue - 1)">Previous</button>
+                                    <button 
+                                        class="btn btn-success" 
+                                        ng-show="currentQue == surveyDetails.length - 1">See Result</button>
+                                    <button 
+                                        ng-show="currentQue < surveyDetails.length - 1"
+                                        class="btn btn-primary" 
+                                        ng-click="updateCurrentQue(currentQue + 1)">Next</button>
                                 </div>
                             </div>
-                            <div class="pull-right">
-                                <button 
-                                    ng-show="currentQue != 0"
-                                    class="btn btn-primary" 
-                                    ng-click="updateCurrentQue(currentQue - 1)">Previous</button>
-                                <button 
-                                    class="btn btn-success" 
-                                    ng-show="currentQue == surveyDetails.length - 1">See Result</button>
-                                <button 
-                                    ng-show="currentQue < surveyDetails.length - 1"
-                                    class="btn btn-primary" 
-                                    ng-click="updateCurrentQue(currentQue + 1)">Next</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 col-xs-12">
-                            <div class="row">
-                                <div class="col-md-12" ng-repeat="item in [1,2,3]">
-                                    <div class="result-card">
-                                        <div class="result-card-title clearfix">
-                                            <div class="result-card-text">Recommended Item: {{item}}</div>
-                                            <div class="result-card-menu"></div>
-                                        </div>
-                                        <div class="result-card-action">
-                                            <button class="btn btn-simple">Action 1</button>
-                                            <button class="btn btn-simple">Action 2</button>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 3% 0">
+                                <div class="row">
+                                    <div class="col-md-4" ng-repeat="item in [1,2,3]">
+                                        <div class="result-card">
+                                            <div class="result-card-title clearfix">
+                                                <div class="result-card-text">Recommended Item: {{item}}</div>
+                                                <div class="result-card-menu"></div>
+                                            </div>
+                                            <div class="result-card-action">
+                                                <button class="btn btn-simple">Action 1</button>
+                                                <button class="btn btn-simple">Action 2</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
